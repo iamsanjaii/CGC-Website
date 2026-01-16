@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme {
+  /* Your Custom Colors */
+  --color-cgc-teal: #00b5cc;
+  --color-cgc-purple: #3b2c85;
+  --color-cgc-bg: #f8fcfd;
+}
