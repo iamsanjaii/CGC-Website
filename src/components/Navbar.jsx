@@ -1,18 +1,16 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom'; // <--- Import Link
-import logo from '../assets/logo.jpg'; // Make sure this matches your file extension (.png or .jpg)
+import { Link, useLocation } from 'react-router-dom';
+import logo from '../assets/logo.jpg'; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation(); // Gets current page path
+  const location = useLocation();
 
-  // Define links with their paths
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Resources', path: '/resources' },
-    // These are placeholders until we build their pages
-    { name: 'Team', path: '/#team' }, 
+    { name: 'Team', path: '/team' }, // <--- Fixed the comma here
     { name: 'Events', path: '/#events' },
   ];
 
@@ -21,7 +19,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           
-          {/* LOGO - Clicks go to Home */}
+          {/* LOGO */}
           <Link to="/" className="flex items-center gap-3 cursor-pointer group">
             <div className="bg-white p-1 rounded-full shadow-sm group-hover:scale-105 transition-transform">
               <img src={logo} alt="CGC Logo" className="h-10 w-10 object-contain rounded-full" />

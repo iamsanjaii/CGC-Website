@@ -1,5 +1,4 @@
 import React from 'react';
-// 👇 THIS WAS MISSING! You must import these to use them.
 import { Routes, Route } from 'react-router-dom'; 
 
 import Navbar from './components/Navbar';
@@ -8,6 +7,7 @@ import Services from './components/Services';
 import Emergency from './components/Emergency';
 import Footer from './components/Footer';
 import Resources from './components/Resources';
+import Team from './components/Team'; // <--- 🚨 YOU MISSED THIS IMPORT!
 
 function App() {
   return (
@@ -26,6 +26,9 @@ function App() {
 
         {/* PAGE 2: RESOURCES */}
         <Route path="/resources" element={<Resources />} />
+
+        {/* PAGE 3: TEAM */}
+        <Route path="/team" element={<Team />} />
       </Routes>
 
       <Footer />
