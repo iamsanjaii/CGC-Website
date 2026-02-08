@@ -1,24 +1,34 @@
 import React from 'react';
-import Navbar from './components/Navbar'; // Import the Navbar we built
-import Hero from './components/Hero';     // Import the Hero we built
-import Services from './components/Services'; // Import the Services we built
-import Emergency from './components/Emergency'; // Import the Emergency we built
-import Footer from './components/Footer'; // Import the Footer we built
+// 👇 THIS WAS MISSING! You must import these to use them.
+import { Routes, Route } from 'react-router-dom'; 
+
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import Emergency from './components/Emergency';
+import Footer from './components/Footer';
+import Resources from './components/Resources';
+
 function App() {
   return (
-    // We use a fragment <> to wrap multiple components
-    // 'min-h-screen' ensures the background covers the whole page
-    <div className="min-h-screen bg-cgc-bg font-sans text-gray-900">
-      
-      {/* 1. The Navigation Bar (Sticks to top) */}
+    <div className="min-h-screen bg-cgc-bg font-sans text-gray-900 flex flex-col">
       <Navbar />
+      
+      <Routes>
+        {/* PAGE 1: HOME */}
+        <Route path="/" element={
+          <>
+            <Hero />
+            <Services />
+            <Emergency />
+          </>
+        } />
 
-      {/* 2. The Hero Section (Welcome Banner) */}
-      <Hero />
-      <Services/>
-      <Emergency/>
-      <Footer/>
+        {/* PAGE 2: RESOURCES */}
+        <Route path="/resources" element={<Resources />} />
+      </Routes>
 
+      <Footer />
     </div>
   );
 }
